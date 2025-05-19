@@ -1,103 +1,256 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
+import { FiSend } from "react-icons/fi";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [scrolled, setScrolled] = useState(false);
+  const [year, setYear] = useState(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 10);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+
+    setYear(new Date().getFullYear());
+  }, []);
+
+  return (
+    <main className="bg-white text-gray-800">
+      {/* Navbar */}
+      <nav className="px-2 py-4">
+        <div className="container mx-auto px-8 flex justify-between bg-gray-900 text-white text-[20px] rounded-3xl">
+          <div className="flex py-5 justify-between items-center w-1/3">
+            <div className="hover:text-amber-700 cursor-pointer">Home</div>
+            <a href="#about" className="hover:text-amber-700 cursor-pointer">
+              About
+            </a>
+            <a href="#service" className="hover:text-amber-700 cursor-pointer">
+              Service
+            </a>
+          </div>
+          <div className="py-5 w-1/3 flex items-center justify-center">
+            <div className="text-white bg-amber-500 rounded-4xl w-8 text-center font-semibold font-stretch-95%">
+              j
+            </div>
+            <div className="ml-1 font-mono">Joyanta</div>
+          </div>
+          <div className="flex py-5 justify-between w-1/3">
+            <a href="#footer" className="hover:text-amber-700 cursor-pointer">
+              More
+            </a>
+            <a href="#service" className="hover:text-amber-700 cursor-pointer">
+              Project
+            </a>
+            <a
+              href="https://wa.me/8801627962866"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-amber-700 cursor-pointer"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      <section>
+        <div className="container mx-auto">
+          <img src="../../Frame3.png" className="w-full" alt="Banner" />
+        </div>
+      </section>
+
+      <section className="mb-5" id="service">
+        <div className="container mx-auto bg-gray-900 rounded-3xl px-5 py-10">
+          <div className="flex justify-between w-full border-b border-b-amber-50 pb-2">
+            <div className="text-3xl flex px-3">
+              <div className="text-white mr-2">My</div>
+              <div className="text-amber-500">Services</div>
+            </div>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+              quae.
+            </div>
+          </div>
+
+          <div className="flex justify-between w-full pt-10">
+            <div className="relative w-[300px] h-[380px] bg-neutral-600 rounded-2xl p-5 overflow-hidden shadow-lg">
+              <h2 className="text-white text-lg font-semibold mb-4 border-b border-b-amber-50 py-2">
+                Web Development
+              </h2>
+
+              <div className="py-5 flex items-center justify-center">
+                <div className="absolute top-24 opacity-80 z-0 px-6 rounded-3xl">
+                  <img
+                    src="https://img.freepik.com/free-photo/glass-background-with-frosted-pattern_53876-132924.jpg"
+                    className="rounded-3xl shadow-[0px_0px_2px_2px] shadow-gray-400"
+                    alt="Mockup Back"
+                  />
+                </div>
+                <div className="absolute top-26 opacity-90 z-10 px-5 rounded-3xl">
+                  <img
+                    src="https://img.freepik.com/free-photo/glass-background-with-frosted-pattern_53876-132924.jpg"
+                    className="rounded-3xl shadow-[0px_0px_2px_2px] shadow-gray-400"
+                    alt="Mockup Mid"
+                  />
+                </div>
+                <div className="absolute top-28 z-20">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRygFu0H70kRJeTZGpaO2frBvsXIinbm3F07A&s"
+                    className="rounded-3xl"
+                    alt="Mockup Front"
+                  />
+                </div>
+              </div>
+
+              <div className="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+                <ArrowUpRight size={20} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="my-5" id="about">
+        <div className="container mx-auto px-5 pb-10">
+          <div className="w-full text-3xl text-center pb-10">
+            My Work Experience
+          </div>
+          <div className="md:flex md:justify-between">
+            <div className="md:w-[45%] w-full">
+              <div className="pb-5">
+                <div className="font-semibold text-2xl">
+                  Chuty Bangladesh Private Ltd.
+                </div>
+                <div className="text-2xl">January 2022 - Present</div>
+              </div>
+            </div>
+            <div className="md:w-[10%] md:block hidden">
+              <div className="flex flex-col items-center space-y-6">
+                {["orange-500", "gray-800", "orange-500"].map((color, i) => (
+                  <div key={i} className="flex flex-col items-center mb-0">
+                    <div className="w-8 h-8 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center">
+                      <div className={`w-5 h-5 bg-${color} rounded-full`}></div>
+                    </div>
+                    {i < 2 && (
+                      <div className="h-[90px] border-l-2 border-dashed border-gray-400"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="md:w-[45%] w-full">
+              <div className="pb-5">
+                <div className="font-semibold text-2xl">Spinner Tech Ltd.</div>
+                <div className="text-2xl">October 2021 - January 2022</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer
+        id="footer"
+        className="bg-gray-900 text-white rounded-t-3xl py-10"
+      >
+        <div className="container mx-auto px-5 py-4">
+          <div className="flex justify-between border-b border-gray-500 py-4">
+            <div className="text-3xl">Let`s Connect there</div>
+            <a
+              href="https://wa.me/8801627962866"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-amber-600 px-3 py-2 rounded-4xl cursor-pointer"
+            >
+              Hire Me
+            </a>
+          </div>
+          <div className="flex justify-between border-b border-gray-500 pt-6">
+            <div>
+              <div className="flex py-2">
+                <div className="text-white bg-amber-500 rounded-4xl w-6 text-center font-semibold font-stretch-95%">
+                  j
+                </div>
+                <div className="ml-1 font-mono">Joyanta</div>
+              </div>
+              <div>
+                Experienced Web Developer with a Proven Track Record of Crafting
+                High-Quality, Scalable, and User-Centric Digital Solutions.
+              </div>
+              <div>
+                <SocialLinks />
+              </div>
+            </div>
+            <div className="px-3">
+              <div className="text-amber-700 my-2">Navigation</div>
+              {[
+                { key: "home", label: "Home" },
+                { key: "about", label: "About Us" },
+                { key: "service", label: "Service" },
+                { key: "service", label: "Resume" },
+                { key: "service", label: "Project" },
+              ].map((item, i) => (
+                <div key={i}>
+                  <a href={`#${item.key}`} className="hover:text-amber-700">
+                    {item.label}
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div className="px-3">
+              <div className="text-amber-700 my-2">Contact</div>
+              <div>
+                <a
+                  href="https://wa.me/8801627962866"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-700"
+                >
+                  +880 1627962866
+                </a>
+              </div>
+              <div>
+                <a
+                  href="mailto:joyantadutta@chutyrooms.com"
+                  className="hover:text-amber-700"
+                >
+                  joyantadutta@chutyrooms.com
+                </a>
+              </div>
+            </div>
+            <div>
+              <div className="text-amber-700 my-2">
+                Get the latest information
+              </div>
+              <form className="flex items-center bg-white rounded-full overflow-hidden w-full max-w-md">
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className="flex-grow px-4 py-3 text-gray-800 placeholder-gray-500 outline-none"
+                />
+                <button
+                  type="submit"
+                  className="bg-orange-600 hover:bg-orange-700 p-3 flex items-center justify-center"
+                >
+                  <FiSend className="text-white text-2xl" />
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="flex justify-between pt-4">
+            <div>© {year ?? ""} Your Name. All rights reserved.</div>
+            <div>User Terms & Conditions | Privacy Policy</div>
+          </div>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }

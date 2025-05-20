@@ -1,66 +1,11 @@
-"use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import SocialLinks from "@/components/SocialLinks";
-import { FiSend } from "react-icons/fi";
+import Layout from "@/app/components/Layout";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-  const [year, setYear] = useState(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleScroll = () => {
-        setScrolled(window.scrollY > 10);
-      };
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
-
-    setYear(new Date().getFullYear());
-  }, []);
-
   return (
-    <main className="bg-white text-gray-800">
-      {/* Navbar */}
-      <nav className="px-2 py-4">
-        <div className="container mx-auto px-8 flex justify-between bg-gray-900 text-white text-[20px] rounded-3xl">
-          <div className="flex py-5 justify-between items-center w-1/3">
-            <div className="hover:text-amber-700 cursor-pointer">Home</div>
-            <a href="#about" className="hover:text-amber-700 cursor-pointer">
-              About
-            </a>
-            <a href="#service" className="hover:text-amber-700 cursor-pointer">
-              Service
-            </a>
-          </div>
-          <div className="py-5 w-1/3 flex items-center justify-center">
-            <div className="text-white bg-amber-500 rounded-4xl w-8 text-center font-semibold font-stretch-95%">
-              j
-            </div>
-            <div className="ml-1 font-mono">Joyanta</div>
-          </div>
-          <div className="flex py-5 justify-between w-1/3">
-            <a href="#footer" className="hover:text-amber-700 cursor-pointer">
-              More
-            </a>
-            <a href="#service" className="hover:text-amber-700 cursor-pointer">
-              Project
-            </a>
-            <a
-              href="https://wa.me/8801627962866"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-700 cursor-pointer"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <Layout>
       <section>
         <div className="container mx-auto">
           <img src="../../Frame3.png" className="w-full" alt="Banner" />
@@ -74,9 +19,8 @@ export default function Home() {
               <div className="text-white mr-2">My</div>
               <div className="text-amber-500">Services</div>
             </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-              quae.
+            <div className="text-white text-sm">
+              Experienced Web Developer with a Proven Track Record. 
             </div>
           </div>
 
@@ -110,9 +54,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+              <Link href="/projects" className="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-orange-500 transition">
                 <ArrowUpRight size={20} />
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -137,7 +81,7 @@ export default function Home() {
                 {["orange-500", "gray-800", "orange-500"].map((color, i) => (
                   <div key={i} className="flex flex-col items-center mb-0">
                     <div className="w-8 h-8 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center">
-                      <div className={`w-5 h-5 bg-${color} rounded-full`}></div>
+                      <div className={`w-5 h-5 bg-${color}  rounded-full`}></div>
                     </div>
                     {i < 2 && (
                       <div className="h-[90px] border-l-2 border-dashed border-gray-400"></div>
@@ -155,102 +99,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer
-        id="footer"
-        className="bg-gray-900 text-white rounded-t-3xl py-10"
-      >
-        <div className="container mx-auto px-5 py-4">
-          <div className="flex justify-between border-b border-gray-500 py-4">
-            <div className="text-3xl">Let`s Connect there</div>
-            <a
-              href="https://wa.me/8801627962866"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-amber-600 px-3 py-2 rounded-4xl cursor-pointer"
-            >
-              Hire Me
-            </a>
-          </div>
-          <div className="flex justify-between border-b border-gray-500 pt-6">
-            <div>
-              <div className="flex py-2">
-                <div className="text-white bg-amber-500 rounded-4xl w-6 text-center font-semibold font-stretch-95%">
-                  j
-                </div>
-                <div className="ml-1 font-mono">Joyanta</div>
-              </div>
-              <div>
-                Experienced Web Developer with a Proven Track Record of Crafting
-                High-Quality, Scalable, and User-Centric Digital Solutions.
-              </div>
-              <div>
-                <SocialLinks />
-              </div>
-            </div>
-            <div className="px-3">
-              <div className="text-amber-700 my-2">Navigation</div>
-              {[
-                { key: "home", label: "Home" },
-                { key: "about", label: "About Us" },
-                { key: "service", label: "Service" },
-                { key: "service", label: "Resume" },
-                { key: "service", label: "Project" },
-              ].map((item, i) => (
-                <div key={i}>
-                  <a href={`#${item.key}`} className="hover:text-amber-700">
-                    {item.label}
-                  </a>
-                </div>
-              ))}
-            </div>
-            <div className="px-3">
-              <div className="text-amber-700 my-2">Contact</div>
-              <div>
-                <a
-                  href="https://wa.me/8801627962866"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amber-700"
-                >
-                  +880 1627962866
-                </a>
-              </div>
-              <div>
-                <a
-                  href="mailto:joyantadutta@chutyrooms.com"
-                  className="hover:text-amber-700"
-                >
-                  joyantadutta@chutyrooms.com
-                </a>
-              </div>
-            </div>
-            <div>
-              <div className="text-amber-700 my-2">
-                Get the latest information
-              </div>
-              <form className="flex items-center bg-white rounded-full overflow-hidden w-full max-w-md">
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  className="flex-grow px-4 py-3 text-gray-800 placeholder-gray-500 outline-none"
-                />
-                <button
-                  type="submit"
-                  className="bg-orange-600 hover:bg-orange-700 p-3 flex items-center justify-center"
-                >
-                  <FiSend className="text-white text-2xl" />
-                </button>
-              </form>
-            </div>
-          </div>
-          <div className="flex justify-between pt-4">
-            <div>© {year ?? ""} Your Name. All rights reserved.</div>
-            <div>User Terms & Conditions | Privacy Policy</div>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </Layout>
   );
 }

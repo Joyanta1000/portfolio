@@ -31,27 +31,13 @@ export default function Home() {
               </h2>
 
               <div className="py-5 flex items-center justify-center">
-                <div className="absolute top-24 opacity-80 z-0 px-6 rounded-3xl">
+             
                   <img
-                    src="https://img.freepik.com/free-photo/glass-background-with-frosted-pattern_53876-132924.jpg"
-                    className="rounded-3xl shadow-[0px_0px_2px_2px] shadow-gray-400"
-                    alt="Mockup Back"
-                  />
-                </div>
-                <div className="absolute top-26 opacity-90 z-10 px-5 rounded-3xl">
-                  <img
-                    src="https://img.freepik.com/free-photo/glass-background-with-frosted-pattern_53876-132924.jpg"
-                    className="rounded-3xl shadow-[0px_0px_2px_2px] shadow-gray-400"
-                    alt="Mockup Mid"
-                  />
-                </div>
-                <div className="absolute top-28 z-20">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRygFu0H70kRJeTZGpaO2frBvsXIinbm3F07A&s"
-                    className="rounded-3xl"
+                    src="../../images/web_development.png"
+                    className=""
                     alt="Mockup Front"
                   />
-                </div>
+            
               </div>
 
               <Link href="/projects" className="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-orange-500 transition">

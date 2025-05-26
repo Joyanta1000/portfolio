@@ -9,7 +9,7 @@ export default function Home() {
     <Layout>
       <section>
         <div className="container mx-auto">
-          <Image src="../../Frame3.png" className="w-full" alt="Banner" />
+          <Image src="/Frame3.png" className="w-full" alt="Banner" width={1000} height={1000} />
         </div>
       </section>
 
@@ -34,9 +34,11 @@ export default function Home() {
               <div className="py-5 flex items-center justify-center">
              
                   <Image
-                    src="../../images/web_development.png"
+                    src="/images/web_development.png"
                     className=""
                     alt="Mockup Front"
+                    width={1000}
+                    height={1000}
                   />
             
               </div>

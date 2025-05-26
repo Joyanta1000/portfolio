@@ -33,10 +33,12 @@ export default function Index() {
 
               <div className="py-5 flex items-center justify-center">
                 <Image
-                  src="../../images/chutyrooms.png"
+                  src="/images/chutyrooms.png"
                   className="cursor-pointer"
                   alt="Mockup Front"
                   onClick={openModal}
+                  width={300}
+                  height={300}
                 />
               </div>
 
@@ -50,49 +52,62 @@ export default function Index() {
           </div>
           {isOpen && (
             <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
-                <button
-                  onClick={closeModal}
-                  className="absolute top-3 right-3 text-white text-2xl hover:text-3xl cursor-pointer"
-                >
-                  &times;
-                </button>
+              <button
+                onClick={closeModal}
+                className="absolute top-3 right-3 text-white text-2xl hover:text-3xl cursor-pointer"
+              >
+                &times;
+              </button>
               <div className="bg-transparent p-6 rounded-lg max-w-3xl w-full relative max-h-[80vh] overflow-y-auto">
-
                 <div className="grid grid-cols-1 gap-4  mt-4">
                   <Image
                     src="/images/chutyrooms_home.png"
                     alt="Photo 1"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   <Image
                     src="/images/2.png"
                     alt="Photo 2"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   <Image
                     src="/images/3.png"
                     alt="Photo 3"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   <Image
                     src="/images/4.png"
                     alt="Photo 4"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   <Image
                     src="/images/5.png"
                     alt="Photo 4"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   <Image
                     src="/images/6.png"
                     alt="Photo 4"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   <Image
                     src="/images/7.png"
                     alt="Photo 4"
                     className="rounded w-full"
+                    width={1000}
+                    height={1000}
                   />
                   {/* Add more images as needed */}
                 </div>

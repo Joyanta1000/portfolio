@@ -14,17 +14,17 @@ export default function index() {
     <Layout>
       <section className="mb-5" id="service">
         <div className="container mx-auto bg-gray-900 rounded-3xl px-5 py-10">
-          <div className="flex justify-between w-full border-b border-b-amber-50 pb-2">
+          <div className="lg:flex lg:justify-between w-full border-b border-b-amber-50 pb-2">
             <div className="text-3xl flex px-3">
               <div className="text-white mr-2">My</div>
               <div className="text-amber-500">Projects</div>
             </div>
-            <div className="text-white text-sm">
+            <div className="text-white text-sm mt-2 lg:mt-0">
               Experienced Web Developer with a Proven Track Record.
             </div>
           </div>
 
-          <div className="flex justify-between w-full pt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-4 w-full pt-10 gap-6">
             <div className="relative w-[300px] h-[380px] bg-neutral-600 rounded-2xl p-5 overflow-hidden shadow-lg">
               <h2 className="text-white text-lg font-semibold mb-4 border-b border-b-amber-50 py-2">
                 Chutyrooms

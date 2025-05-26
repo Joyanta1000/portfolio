@@ -5,34 +5,34 @@ import SocialLinks from "@/components/SocialLinks";
 
 export default function Footer({ year }) {
   return (
-    <footer id="footer" className="bg-gray-900 text-white rounded-t-3xl py-10">
+    <footer id="footer" className="bg-gray-900 text-white rounded-t-3xl pt-10 ">
       <div className="container mx-auto px-5 py-4">
-        <div className="flex justify-between border-b border-gray-500 py-4">
-          <div className="text-3xl">Let`s Connect there</div>
+        <div className="lg:flex lg:justify-between border-b border-gray-500 py-4">
+          <div className="text-3xl mb-3 lg:mb-0">Let`s Connect there</div>
           <a
             href="https://wa.me/8801627962866"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-amber-600 px-3 py-2 rounded-4xl cursor-pointer"
+            className="bg-amber-600 px-3 py-2 rounded-4xl cursor-pointer "
           >
             Hire Me
           </a>
         </div>
-        <div className="flex justify-between border-b border-gray-500 pt-6">
-          <div>
+        <div className="lg:flex lg:justify-between border-b border-gray-500 pt-6 pb-6 lg:pb-0">
+          <div className=" lg:pr-3">
             <div className="flex py-2">
               <div className="text-white bg-amber-500 rounded-4xl w-6 text-center font-semibold font-stretch-95%">
                 j
               </div>
               <div className="ml-1 font-mono">Joyanta</div>
             </div>
-            <p>
+            <p >
               Experienced Web Developer with a Proven Track Record of Crafting
               High-Quality, Scalable, and User-Centric Digital Solutions.
             </p>
             <SocialLinks />
           </div>
-          <div className="px-3">
+          <div className="lg:px-3">
             <div className="text-amber-700 my-2">Navigation</div>
             {[
               { key: "home", label: "Home" },
@@ -48,7 +48,7 @@ export default function Footer({ year }) {
               </div>
             ))}
           </div>
-          <div className="px-3">
+          <div className="lg:px-3">
             <div className="text-amber-700 my-2">Contact</div>
             <div>
               <a
@@ -69,7 +69,7 @@ export default function Footer({ year }) {
               </a>
             </div>
           </div>
-          <div>
+          <div className="lg:pl-3">
             <div className="text-amber-700 my-2">Get the latest information</div>
             <form className="flex items-center bg-white rounded-full overflow-hidden w-full max-w-md">
               <input
@@ -87,8 +87,8 @@ export default function Footer({ year }) {
           </div>
         </div>
         <div className="flex justify-between pt-4">
-          <div>© {year} Your Name. All rights reserved.</div>
-          <div>User Terms & Conditions | Privacy Policy</div>
+          <div className="pr-2 lg:pr-0">© {year} Joyanta Dutta. All rights reserved.</div>
+          <div className="pl-2 lg:pl-0">User Terms & Conditions | Privacy Policy</div>
         </div>
       </div>
     </footer>

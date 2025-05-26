@@ -56,10 +56,11 @@ export default function Navbar() {
           <Image
             src="/icons/menu.png"
             alt="Menu"
-            width={24}
-            height={24}
-            className="cursor-pointer"
+            width={34}
+            height={34}
+            className="cursor-pointer mb-1"
             onClick={toggleMenu}
+            
           />
         </div>
       </div>

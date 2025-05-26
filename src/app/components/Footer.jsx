@@ -2,6 +2,7 @@
 
 import { FiSend } from "react-icons/fi";
 import SocialLinks from "@/components/SocialLinks";
+import Link from "next/link";
 
 export default function Footer({ year }) {
   return (
@@ -20,12 +21,12 @@ export default function Footer({ year }) {
         </div>
         <div className="lg:flex lg:justify-between border-b border-gray-500 pt-6 pb-6 lg:pb-0">
           <div className=" lg:pr-3">
-            <div className="flex py-2">
+            <Link href="/" className="flex py-2">
               <div className="text-white bg-amber-500 rounded-4xl w-6 text-center font-semibold font-stretch-95%">
                 j
               </div>
               <div className="ml-1 font-mono">Joyanta</div>
-            </div>
+            </Link>
             <p >
               Experienced Web Developer with a Proven Track Record of Crafting
               High-Quality, Scalable, and User-Centric Digital Solutions.

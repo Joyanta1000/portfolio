@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -52,7 +53,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className=" flex py-5 justify-end items-end lg:hidden w-1/3">
-          <img
+          <Image
             src="../../../icons/menu.png"
             alt=""
             className="cursor-pointer"

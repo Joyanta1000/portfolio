@@ -4,8 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import Layout from "../components/Layout";
 
 import { useState } from "react";
+import Image from "next/image";
 
-export default function index() {
+export default function Index() {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
@@ -31,7 +32,7 @@ export default function index() {
               </h2>
 
               <div className="py-5 flex items-center justify-center">
-                <img
+                <Image
                   src="../../images/chutyrooms.png"
                   className="cursor-pointer"
                   alt="Mockup Front"
@@ -58,37 +59,37 @@ export default function index() {
               <div className="bg-transparent p-6 rounded-lg max-w-3xl w-full relative max-h-[80vh] overflow-y-auto">
 
                 <div className="grid grid-cols-1 gap-4  mt-4">
-                  <img
+                  <Image
                     src="/images/chutyrooms_home.png"
                     alt="Photo 1"
                     className="rounded w-full"
                   />
-                  <img
+                  <Image
                     src="/images/2.png"
                     alt="Photo 2"
                     className="rounded w-full"
                   />
-                  <img
+                  <Image
                     src="/images/3.png"
                     alt="Photo 3"
                     className="rounded w-full"
                   />
-                  <img
+                  <Image
                     src="/images/4.png"
                     alt="Photo 4"
                     className="rounded w-full"
                   />
-                  <img
+                  <Image
                     src="/images/5.png"
                     alt="Photo 4"
                     className="rounded w-full"
                   />
-                  <img
+                  <Image
                     src="/images/6.png"
                     alt="Photo 4"
                     className="rounded w-full"
                   />
-                  <img
+                  <Image
                     src="/images/7.png"
                     alt="Photo 4"
                     className="rounded w-full"

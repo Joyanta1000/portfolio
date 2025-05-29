@@ -1,4 +1,3 @@
-
 import Layout from "@/app/components/Layout";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -9,7 +8,13 @@ export default function Home() {
     <Layout>
       <section>
         <div className="container mx-auto">
-          <Image src="/Frame3.png" className="w-full" alt="Banner" width={1000} height={1000} />
+          <Image
+            src="/Frame3.png"
+            className="w-full"
+            alt="Banner"
+            width={1000}
+            height={1000}
+          />
         </div>
       </section>
 
@@ -21,7 +26,7 @@ export default function Home() {
               <div className="text-amber-500">Services</div>
             </div>
             <div className="text-white text-sm mt-2 lg:mt-0">
-              Experienced Web Developer with a Proven Track Record. 
+              Experienced Web Developer with a Proven Track Record.
             </div>
           </div>
 
@@ -32,18 +37,19 @@ export default function Home() {
               </h2>
 
               <div className="py-5 flex items-center justify-center">
-             
-                  <Image
-                    src="/images/web_development.png"
-                    className=""
-                    alt="Mockup Front"
-                    width={1000}
-                    height={1000}
-                  />
-            
+                <Image
+                  src="/images/web_development.png"
+                  className=""
+                  alt="Mockup Front"
+                  width={1000}
+                  height={1000}
+                />
               </div>
 
-              <Link href="/projects" className="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+              <Link
+                href="/projects"
+                className="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-orange-500 transition"
+              >
                 <ArrowUpRight size={20} />
               </Link>
             </div>
@@ -67,16 +73,27 @@ export default function Home() {
             </div>
             <div className="md:w-[10%] md:block hidden">
               <div className="flex flex-col items-center space-y-6">
-                {["orange-500", "gray-800", "orange-500"].map((color, i) => (
-                  <div key={i} className="flex flex-col items-center mb-0">
-                    <div className="w-8 h-8 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center">
-                      <div className={`w-5 h-5 bg-${color}  rounded-full`}></div>
-                    </div>
-                    {i < 2 && (
-                      <div className="h-[90px] border-l-2 border-dashed border-gray-400"></div>
-                    )}
+                <div className="flex flex-col items-center mb-0">
+                  <div className="w-8 h-8 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center">
+                    <div
+                      className={`w-5 h-5 bg-orange-500  rounded-full`}
+                    ></div>
                   </div>
-                ))}
+                  <div className="h-[90px] border-l-2 border-dashed border-gray-400"></div>
+                </div>
+                <div className="flex flex-col items-center mb-0">
+                  <div className="w-8 h-8 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center">
+                    <div className={`w-5 h-5 bg-gray-800  rounded-full`}></div>
+                  </div>
+                  <div className="h-[90px] border-l-2 border-dashed border-gray-400"></div>
+                </div>
+                <div className="flex flex-col items-center mb-0">
+                  <div className="w-8 h-8 rounded-full border-2 border-dashed border-gray-400 flex items-center justify-center">
+                    <div
+                      className={`w-5 h-5 bg-orange-500  rounded-full`}
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="md:w-[45%] w-full">

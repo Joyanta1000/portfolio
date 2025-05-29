@@ -16,7 +16,7 @@ export const metadata = {
   title: "Joyanta",
   description: "Web developer",
   // icons: {
-  //   icon: "/favicon.png",
+  //   icon: "/favicon.ico",
   // },
 };
 

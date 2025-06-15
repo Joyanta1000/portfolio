@@ -9,7 +9,7 @@ export default function Home() {
       <section>
         <div className="container mx-auto">
           <Image
-            src="/Frame3.png"
+            src="/Frame3.svg"
             className="w-full"
             alt="Banner"
             width={1000}

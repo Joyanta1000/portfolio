@@ -21,7 +21,7 @@ export default function Home() {
       <section className="mb-5" id="service">
         <div className="container mx-auto bg-gray-900 rounded-3xl px-5 py-10">
           <div className="lg:flex lg:justify-between w-full border-b border-b-amber-50 pb-2">
-            <div className="text-3xl flex px-3">
+            <div className="text-3xl flex lg:px-3">
               <div className="text-white mr-2">My</div>
               <div className="text-amber-500">Services</div>
             </div>

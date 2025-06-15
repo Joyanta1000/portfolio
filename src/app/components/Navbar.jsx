@@ -10,7 +10,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpenMenu(!isOpenMenu);
   return (
     <nav className="px-2 py-4 relative">
-      <div className="container mx-auto px-8 flex justify-between bg-gray-900 text-white text-[20px] rounded-3xl">
+      <div className="container mx-auto px-4 lg:px-8 flex justify-between bg-gray-900 text-white text-[20px] rounded-3xl">
         <div className="lg:flex py-5 justify-between items-center hidden w-1/3  ">
           <Link href="/" className="hover:text-amber-700 cursor-pointer">
             Home
